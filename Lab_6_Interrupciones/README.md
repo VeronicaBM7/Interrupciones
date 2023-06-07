@@ -26,27 +26,21 @@ Las interrupciones que se están empleando en este sistema son de tipo externo p
 
 
 check_speed:
-
 Como su nombre lo dice se encarga de modificar la velocidad del conteo, por medio del  registro r8 se obtiene el valor de la interrupción ingresada por PA10. Conforme al valor del registro r8 será la velocidad. 
 
 delay:
-
 Esta función dependerá de la función check_speed. check_speed se encargará de comunicarle a delay el tiempo (speed).
 
 systick_initialize:
-
 Establece la Systick  para generar interrupciones en un intervalo de tiempo fijo.
 
 systick_handler:
-
 Decrementa la variable dada por check_speed.
 
 reset_handler:
-
 Es en el encargado de invocar a la función main.
 
 EXTI15_10_Handler:
-
 El sistema trabaja con interrupciones externas a través de los pines GPIO A10 y A11. En esta función se evalua el valor de los pines A10 y A11, según sea el valor de la comparación, será la interrupción solicitada. 
 
 **Configuración de los perifericos**
@@ -55,12 +49,10 @@ Outputs: A0 - A9
 Inputs: A10 y A11
 
 **Manera de compilar el software**
-
 make cleanwin: sirve para limpiar el proyecto.
-
 make : sirve para ensamblar y enlazar.
-
 make write: sirve para grabar.
-
+Tambien se puede utilizar la herramienta STM32CubeProgrammer para grabar la BluePill
 
 **Diagrama de cómo conectar el hardware**
+![image](https://github.com/VeronicaBM7/Interrupciones/assets/126813868/b77c976e-7afb-4b84-a48a-3a4e0edfc43c)
